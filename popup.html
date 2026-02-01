@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>PromptVault</h1>
+    <button id="logoutBtn" class="hidden">Logout</button>
+  </div>
+
+  <!-- Login -->
+  <div id="loginView" class="section">
+    <div id="loginMsg" class="msg"></div>
+    <label>Email</label>
+    <input type="email" id="emailInput" placeholder="you@example.com">
+    <label>Password</label>
+    <input type="password" id="passInput" placeholder="Password">
+    <button class="btn btn-primary" id="loginBtn">Log In</button>
+  </div>
+
+  <!-- Main (authed) -->
+  <div id="mainView" class="hidden">
+    <div class="tabs">
+      <button class="tab active" data-tab="save">Save</button>
+      <button class="tab" data-tab="browse">Browse</button>
+    </div>
+
+    <!-- Save tab -->
+    <div id="saveTab" class="section">
+      <div id="saveMsg" class="msg"></div>
+      <label>Selected Text</label>
+      <textarea id="selectionText" placeholder="Select text on any page, then open this popup." rows="3"></textarea>
+      <label>Title</label>
+      <input type="text" id="titleInput" placeholder="Prompt title">
+      <label>Category</label>
+      <select id="categorySelect">
+        <option value="uncategorized">Uncategorized</option>
+        <option value="coding">Coding</option>
+        <option value="writing">Writing</option>
+        <option value="marketing">Marketing</option>
+        <option value="business">Business</option>
+        <option value="creative">Creative</option>
+        <option value="data">Data</option>
+        <option value="other">Other</option>
+      </select>
+      <label>Tags (comma separated)</label>
+      <input type="text" id="tagsInput" placeholder="gpt, productivity">
+      <button class="btn btn-primary" id="saveBtn">Save Prompt</button>
+    </div>
+
+    <!-- Browse tab -->
+    <div id="browseTab" class="section hidden">
+      <input type="text" id="searchInput" placeholder="Search prompts...">
+      <div class="prompt-list" id="promptList"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
