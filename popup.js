@@ -104,7 +104,7 @@ saveBtn.addEventListener('click', async () => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${access_token}`
       },
-      body: JSON.stringify({ title, content, category, tags })
+      body: JSON.stringify({ title, prompt_text: content, category, tags })
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
